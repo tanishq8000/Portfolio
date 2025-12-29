@@ -1,0 +1,714 @@
+/* ============================================
+   UIDO.ME-INSPIRED SOFTWARE ENGINEER PORTFOLIO
+   Pure Black • Bento Cards • Neon Glows
+   ============================================ */
+
+/* CSS Custom Properties */
+:root {
+  /* Pure Black Theme */
+  --color-bg: #000000;
+  --color-bg-card: #0A0A0A;
+  --color-bg-elevated: #121212;
+
+  /* Neon Accents */
+  --color-cyan: #00D9FF;
+  --color-cyan-glow: rgba(0, 217, 255, 0.3);
+  --color-lavender: #A78BFA;
+  --color-lavender-glow: rgba(167, 139, 250, 0.3);
+  --color-magenta: #EC4899;
+  --color-magenta-glow: rgba(236, 72, 153, 0.3);
+  --color-blue: #6366F1;
+
+  /* Text */
+  --color-text: #FFFFFF;
+  --color-text-secondary: #A1A1A1;
+  --color-text-muted: #666666;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+
+  /* Bento Box Styling */
+  --radius-bento: 32px;
+  --radius-pill: 100px;
+  --glow-size: 60px;
+
+  /* Spacing */
+  --space-section: 8rem;
+  --space-card: 3rem;
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  cursor: auto;
+}
+
+/* Custom cursor removed - using default cursor */
+@media (min-width: 769px) {
+  * {
+    cursor: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-cyan);
+  color: black;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.large-text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.meta-text {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+/* ============================================
+   Custom Cursor - Disabled
+   ============================================ */
+.custom-cursor,
+.cursor-follower {
+  display: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-cyan);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px var(--color-cyan-glow);
+}
+
+.cursor-follower::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-cyan);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.cursor-text {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  color: var(--color-cyan);
+}
+
+@media (max-width: 768px) {
+
+  .custom-cursor,
+  .cursor-follower {
+    display: none;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}
+
+/* ============================================
+   Layout
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: var(--space-section) 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+}
+
+/* ============================================
+   Navbar
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 0;
+}
+
+.navbar-pill {
+  padding: 0.75rem 2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(20px);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-link {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: var(--color-cyan);
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 1rem;
+  }
+
+  .navbar-pill {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .navbar-link {
+    font-size: 0.75rem;
+  }
+}
+
+/* ============================================
+   Bento Card Component
+   ============================================ */
+.bento-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  cursor: auto;
+  border-radius: var(--radius-bento);
+  padding: var(--space-card);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-bento);
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, var(--color-cyan-glow), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 var(--glow-size) var(--color-cyan-glow),
+    0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.bento-card-large {
+  padding: 4rem;
+}
+
+.bento-card-image {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.bento-card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.bento-card:hover .bento-card-image img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   Tech Pill Component
+   ============================================ */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.875rem 1.75rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tech-pill:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px var(--color-cyan-glow);
+}
+
+.tech-pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero-bento-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2rem;
+  align-items: start;
+  min-height: 100vh;
+  padding-top: 120px;
+}
+
+.hero-profile-card {
+  position: sticky;
+  top: 120px;
+}
+
+.hero-avatar {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-bento);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.hero-avatar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 217, 255, 0.1));
+  pointer-events: none;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.hero-title-section h1 {
+  margin-bottom: 1rem;
+  line-height: 0.95;
+}
+
+.hero-title-section .meta-text {
+  color: var(--color-cyan);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  max-width: 700px;
+}
+
+@media (max-width: 1024px) {
+  .hero-bento-grid {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+  }
+
+  .hero-profile-card {
+    position: static;
+  }
+}
+
+/* ============================================
+   Project Story Cards - Grid Layout
+   ============================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.story-card {
+  cursor: default;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-card .bento-card-image {
+  aspect-ratio: 16 / 10;
+  height: 220px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+
+.story-card .bento-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-meta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.story-meta .meta-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.story-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.story-description {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.read-story-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-cyan);
+  font-weight: 500;
+  text-decoration: none;
+  transition: gap 0.3s;
+  cursor: pointer !important;
+  pointer-events: all !important;
+}
+
+.read-story-btn:hover {
+  gap: 1rem;
+}
+
+/* ============================================
+   Philosophy Section
+   ============================================ */
+.philosophy-section {
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-bento);
+  padding: 5rem var(--space-card);
+  text-align: center;
+  margin: var(--space-section) 0;
+  position: relative;
+}
+
+.philosophy-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--color-cyan-glow) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.philosophy-quote {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--color-text);
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.philosophy-quote::before {
+  content: '"';
+  color: var(--color-cyan);
+  font-size: 5rem;
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  opacity: 0.3;
+}
+
+/* ============================================
+   Stats Grid
+   ============================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-bento);
+  border: 1px solid var(--color-border);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-cyan);
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  padding: 4rem 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-section);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-text {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-link {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--color-cyan);
+}
+
+/* ============================================
+   Preloader
+   ============================================ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-content {
+  text-align: center;
+}
+
+.preloader-text {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-cyan);
+  margin-bottom: 2rem;
+}
+
+.preloader-text .char {
+  display: inline-block;
+}
+
+.preloader-progress-container {
+  width: 200px;
+  height: 2px;
+  background: var(--color-border);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.preloader-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--color-cyan);
+  border-radius: 2px;
+  box-shadow: 0 0 20px var(--color-cyan-glow);
+}
+
+/* ============================================
+   Utilities
+   ============================================ */
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-elevated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyan);
+}
