@@ -129,6 +129,34 @@ export default function Home() {
                                     alt="Profile"
                                 />
                             </div>
+
+                            {/* Open to Work Badge */}
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                padding: '0.5rem 1rem',
+                                background: 'rgba(34, 197, 94, 0.1)',
+                                border: '1px solid rgba(34, 197, 94, 0.3)',
+                                borderRadius: '100px',
+                                marginBottom: '1rem',
+                                animation: 'pulse-border 2s ease-in-out infinite'
+                            }}>
+                                <span style={{
+                                    width: '8px',
+                                    height: '8px',
+                                    borderRadius: '50%',
+                                    background: '#22c55e',
+                                    boxShadow: '0 0 8px rgba(34, 197, 94, 0.6)',
+                                    animation: 'pulse-dot 2s ease-in-out infinite'
+                                }}></span>
+                                <span style={{
+                                    fontSize: '0.875rem',
+                                    fontWeight: '600',
+                                    color: '#22c55e'
+                                }}>Open to Work</span>
+                            </div>
+
                             <h3 style={{ marginBottom: '0.5rem' }}>Tanishq Khandelwal</h3>
                             <p className="meta-text" style={{ marginBottom: '1.5rem' }}>Software Engineer</p>
                             <p style={{ fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
