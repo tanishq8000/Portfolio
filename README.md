@@ -1,221 +1,168 @@
-# 💬 Chat Room
+# 🚀 Creative Developer Portfolio
 
-A real-time chat application built with React, Socket.IO, and MongoDB. Users can join chat rooms, send messages, and see message history - all in real-time with a modern, responsive interface.
+A modern, interactive portfolio website featuring stunning 3D graphics, smooth animations, and an immersive user experience. Built with React, Three.js, and cutting-edge web technologies.
 
 ## ✨ Features
 
-- 🚀 **Real-time messaging** using Socket.IO
-- 💾 **Persistent message history** with MongoDB
-- 🎨 **Modern UI** designed with Tailwind CSS
-- 👥 **Multiple users** can chat simultaneously
-- 📱 **Responsive design** for all devices
-- 🔄 **Load previous messages** when joining
-- ⚡ **Fast and lightweight** with Vite
+- **3D Interactive Graphics** - Powered by Three.js and React Three Fiber
+- **Smooth Animations** - Seamless transitions using Framer Motion and GSAP
+- **Responsive Design** - Optimized for all devices and screen sizes
+- **Contact Form** - Integrated with EmailJS for direct communication
+- **Modern UI/UX** - Clean, premium design with smooth scrolling (Lenis)
+- **Fast Performance** - Built with Vite for lightning-fast development and optimized builds
+- **Post-Processing Effects** - Advanced visual effects using React Three Postprocessing
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **React 19.2.0** - UI framework
-- **Vite 7.2.4** - Build tool and dev server
-- **Socket.IO Client 4.8.1** - Real-time communication
-- **Tailwind CSS 3.4.19** - Styling
+- **Frontend Framework:** React 18
+- **3D Graphics:** Three.js, React Three Fiber, React Three Drei
+- **Animation:** Framer Motion, GSAP
+- **Routing:** React Router DOM
+- **Smooth Scrolling:** Lenis
+- **Email Integration:** EmailJS
+- **Build Tool:** Vite
+- **Styling:** Custom CSS
 
-### Backend
-- **Node.js** - Runtime environment
-- **Express 5.2.1** - Web framework
-- **Socket.IO 4.8.1** - WebSocket server
-- **MongoDB** with Mongoose 9.0.2 - Database
-- **dotenv 17.2.3** - Environment variables
-- **CORS 2.8.5** - Cross-origin resource sharing
+## 📋 Prerequisites
 
-## 📁 Project Structure
-
-```
-chat-room/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── Components/    # React components (Join, Chat)
-│   │   ├── socket.js      # Socket.IO client configuration
-│   │   └── App.jsx        # Main app component
-│   ├── package.json
-│   └── vite.config.js
-│
-├── server/                # Backend Node.js server
-│   ├── models/
-│   │   └── Message.js     # MongoDB message schema
-│   ├── db.js              # Database connection
-│   ├── index.js           # Server entry point
-│   ├── .env               # Environment variables (not in repo)
-│   └── package.json
-│
-└── package.json           # Root package.json for scripts
-```
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- npm (comes with Node.js)
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 1. Clone the Repository
 
-- Node.js (v14 or higher)
-- MongoDB Atlas account or local MongoDB installation
-- npm or yarn package manager
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd chat-room
-   ```
-
-2. **Install dependencies**
-
-   Install root dependencies:
-   ```bash
-   npm install
-   ```
-
-   Install server dependencies:
-   ```bash
-   cd server
-   npm install
-   cd ..
-   ```
-
-   Install client dependencies:
-   ```bash
-   cd client
-   npm install
-   cd ..
-   ```
-
-3. **Set up environment variables**
-
-   Create a `.env` file in the `server` directory:
-   ```env
-   MONGO_URI=your_mongodb_connection_string
-   PORT=3000
-   ```
-
-   Replace `your_mongodb_connection_string` with your actual MongoDB connection string from MongoDB Atlas or your local MongoDB instance.
-
-4. **Update CORS origin** (if needed)
-
-   In `server/index.js`, update the CORS origin to match your frontend URL:
-   ```javascript
-   const io = new Server(server, {
-     cors: {
-       origin: "http://localhost:5173", // Change this for development
-       methods: ["GET", "POST"],
-       credentials: true,
-     },
-   });
-   ```
-
-## 🎯 Running the Application
-
-### Development Mode
-
-**Option 1: Run both client and server separately**
-
-In one terminal, start the server:
 ```bash
-npm run server
+git clone <your-repository-url>
+cd Portfolio
 ```
 
-In another terminal, start the client:
+### 2. Install Dependencies
+
 ```bash
-npm run client
+npm install
 ```
 
-**Option 2: Run from respective directories**
+### 3. Configure Environment Variables
 
-Server (from `server/` directory):
+Copy the example environment file and fill in your EmailJS credentials:
+
 ```bash
-npm run dev    # Uses nodemon for auto-restart
-# or
-npm start      # Regular node
+cp .env.example .env
 ```
 
-Client (from `client/` directory):
+Edit the `.env` file with your actual EmailJS configuration:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id_here
+VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
+```
+
+> **Note:** To get your EmailJS credentials, sign up at [EmailJS.com](https://www.emailjs.com/) and create a service and template.
+
+### 4. Run the Development Server
+
 ```bash
 npm run dev
 ```
 
-The client will be available at `http://localhost:5173` (default Vite port)
-The server will run on `http://localhost:3000` (or the PORT specified in .env)
+The application will start at `http://localhost:5173` (or another port if 5173 is occupied).
 
-### Production
+## 📦 Available Scripts
 
-Build the client:
-```bash
-cd client
-npm run build
+- `npm run dev` - Start the development server
+- `npm run build` - Build the project for production
+- `npm run preview` - Preview the production build locally
+
+## 🏗️ Project Structure
+
 ```
-
-Start the server:
-```bash
-cd server
-npm start
+Portfolio/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable React components
+│   ├── config/          # Configuration files (EmailJS, etc.)
+│   ├── hooks/           # Custom React hooks
+│   ├── pages/           # Page components (Home, About, etc.)
+│   ├── styles/          # CSS stylesheets
+│   ├── utils/           # Utility functions
+│   ├── App.jsx          # Main application component
+│   └── main.jsx         # Application entry point
+├── .env.example         # Example environment variables
+├── index.html           # HTML template
+├── package.json         # Project dependencies and scripts
+└── vite.config.js       # Vite configuration
 ```
 
 ## 🌐 Deployment
 
-This project is configured for deployment with separate client and server hosting:
+This project is optimized for deployment on platforms like:
+- **Vercel** (recommended)
+- **Netlify**
+- **GitHub Pages**
 
-- **Client**: Deployed on Vercel (configured origin: `https://chat-room-alpha-umber.vercel.app`)
-- **Server**: Can be deployed on platforms like Render, Railway, or Heroku
+### Deploy to Vercel
 
-### Deployment Checklist
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run: `vercel`
+3. Follow the prompts
 
-- [ ] Update CORS origin in `server/index.js` to your production client URL
-- [ ] Set `MONGO_URI` environment variable in your server hosting platform
-- [ ] Ensure MongoDB allows connections from your server's IP
-- [ ] Update Socket.IO server URL in `client/src/socket.js` if needed
-- [ ] Build the client with `npm run build` before deploying
+Or connect your GitHub repository to Vercel for automatic deployments.
 
-## 🔧 Configuration
+> **Important:** Remember to add your environment variables (`VITE_EMAILJS_*`) in your deployment platform's settings.
 
-### Socket.IO Configuration
+## 🎨 Customization
 
-Update the server URL in `client/src/socket.js` to point to your backend:
-```javascript
-const socket = io("http://localhost:3000"); // Development
-// or
-const socket = io("https://your-server-url.com"); // Production
-```
+1. **Content:** Update the content in the `src/pages/` components
+2. **Styling:** Modify styles in `src/styles/index.css`
+3. **3D Elements:** Customize 3D components in the `src/components/` directory
+4. **Colors & Theme:** Update CSS variables in the stylesheet
 
-### MongoDB Configuration
+## 📧 Contact Form Setup
 
-The Message schema stores:
-- `user` - Username of the sender
-- `text` - Message content
-- `time` - Timestamp (auto-generated)
+The contact form uses EmailJS. To set it up:
 
-Messages are sorted by time and limited to the last 50 messages when a user joins.
+1. Sign up at [EmailJS.com](https://www.emailjs.com/)
+2. Create an email service (Gmail, Outlook, etc.)
+3. Create an email template
+4. Copy your Service ID, Template ID, and Public Key
+5. Add them to your `.env` file
 
-## 📝 Usage
+## 🔒 Security Notes
 
-1. Open the application in your browser
-2. Enter a username to join the chat
-3. Start sending messages
-4. Messages are stored in MongoDB and will persist across sessions
-5. New users will see the last 50 messages when they join
+- Never commit your `.env` file to version control
+- The `.env.example` file is provided as a template
+- Make sure `.env` is listed in `.gitignore`
+
+## 🐛 Troubleshooting
+
+### Development server won't start
+- Ensure Node.js is installed: `node --version`
+- Delete `node_modules` and reinstall: `rm -rf node_modules && npm install`
+
+### Contact form not working
+- Verify your EmailJS credentials in `.env`
+- Check browser console for errors
+- Ensure environment variables are prefixed with `VITE_`
+
+### Build errors
+- Clear the dist folder: `rm -rf dist`
+- Rebuild: `npm run build`
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest new features
-- Submit pull requests
-
-## 📄 License
-
-ISC
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
 ## 👨‍💻 Author
 
-Tanishq Khandelwal
+**Tanishq Khandelwal**
 
 ---
 
-**Happy Chatting! 💬✨**
+⭐ If you found this project helpful, please consider giving it a star!
