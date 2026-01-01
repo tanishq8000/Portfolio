@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website featuring stunning 3D graphics, smooth animations, and an immersive user experience. Built with React, Three.js, and cutting-edge web technologies.
 
-🔗 Check out Live : https://chat-room-alpha-umber.vercel.app/
+🔗 Check out Live : https://portfolio-phi-flax-76.vercel.app/
 
 ## ✨ Features
 
