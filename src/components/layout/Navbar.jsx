@@ -5,7 +5,7 @@ const navLinks = [
     { name: 'Work', path: '/projects' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Resume', path: 'https://drive.google.com/file/d/1rl5TEFhh-EBKSUgzbzN5Vke-ZTa20_xl/view', external: true },
+    { name: 'Resume', path: 'https://drive.google.com/file/d/15MGtATXUEjWW7Kj4gz4-WYvNTbvKUo7E/view', external: true },
 ]
 
 export default function Navbar() {

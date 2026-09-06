@@ -6,30 +6,29 @@ import useSmoothScroll from '../hooks/useSmoothScroll'
 import profileImage from '../utils/latest pho.jpg'
 
 const skills = {
-    languages: ['C++', 'C#', 'Java', 'JavaScript', 'SQL'],
-    frontend: ['HTML', 'CSS', 'React', 'Tailwind CSS', 'Next.js', 'Jest'],
-    backend: ['Node.js', 'Express.js', 'ASP.NET Core'],
-    databases: ['MongoDB', 'MySQL', 'SQL Server', 'Prisma'],
-    tools: ['Postman', 'Git', 'GitHub'],
-    cloud: ['AWS', 'Azure Monitoring', 'Alerts', 'Grafana'],
-    concepts: ['DSA', 'OOPs', 'DBMS', 'Operating Systems'],
+    languages: ['C/C++', 'C#', 'Java', 'JavaScript', 'TypeScript', 'SQL'],
+    frameworks: ['React.js', 'ASP.NET Core', 'Node.js', 'Next.js', 'REST APIs'],
+    architecture: ['CQRS', 'Event-Driven Architecture', 'Layered Architecture', 'System Design', 'OOD', 'Microservices', 'Scalability'],
+    infrastructure: ['SQL Server', 'MongoDB', 'MySQL', 'Redis', 'Azure (App Insights, Blob Storage, Key Vault)', 'Multi-Tier Caching'],
+    devops: ['Jest', 'Cypress', 'Git', 'GitHub', 'CI/CD', 'Docker', 'Grafana', 'Agile'],
+    ai: ['LLM Agents', 'Generative AI', 'Agentic AI', 'MCP'],
 };
 
 
 const experience = [
     {
-        year: 'Feb 2024 - Present',
+        year: 'Mar 2026 - Present',
+        title: 'Intermediate Software Engineer (SDE-2)',
+        company: 'Q2 Software, Bengaluru',
+        description:
+            'Automated onboarding for 100+ enterprise clients by designing a multi-step bulk-ingestion system, cutting onboarding from 3+ hours to ~20 minutes (~90% faster). Contributed to a multi-tier read-through cache (in-process → Redis → Blob → DB), cutting repeat-read latency ~90%. Improved platform resilience with circuit breaker and timeout-guarded reads. Resolved 15+ cross-cutting UI/API defects backed by Jest and Cypress tests. Enabled global readiness across 10+ pages through localization and leveraged AI tooling (Claude/Codex) to accelerate development.',
+    },
+    {
+        year: 'Feb 2024 - Feb 2026',
         title: 'Advanced Associate Software Engineer',
         company: 'Accenture, Bengaluru',
         description:
-            'Enhanced UI components in high-traffic applications using React, Razor (.cshtml), and Bootstrap, reducing bounce rates by up to 20%. Contributed to full-stack updates using React, Razor, and SQL Server for applications serving 10,000+ users. Resolved API and database issues using Postman and SQL Server, reducing system downtime by 30%. Monitored applications via Azure Portal with dashboards and alerts to ensure 99.9% uptime.',
-    },
-    {
-        year: 'Jan 2023 - Mar 2023',
-        title: 'Software Engineer Intern',
-        company: 'Cloud Mentor, Jaipur',
-        description:
-            'Improved UI consistency and responsiveness across 5+ web pages using HTML, CSS, and JavaScript. Gained hands-on experience with Salesforce Admin and Apex Development, including custom objects, validation rules, page layouts, and automation using Apex triggers and flows.',
+            'Delivered full-stack feature enhancements for applications serving 10,000+ users, translating client requirements into frontend (React) and backend (Node.js / ASP.NET, SQL Server) changes across multiple production systems. Rebuilt high-traffic UI components (React, ASP.NET Razor, Tailwind) contributing to up to a 20% drop in bounce rate. Improved application reliability by diagnosing API and SQL Server issues, contributing to a 30% reduction in downtime. Sustained 99.9% application uptime by owning production monitoring in Azure and Grafana.',
     },
 ];
 
@@ -126,24 +125,24 @@ export default function About() {
                 {/* Intro */}
                 <div className="about-intro" style={{ maxWidth: '900px', margin: '0 auto 8rem', textAlign: 'center' }}>
                     <p style={{ marginBottom: '1.5rem' }}>
-                        I’m Tanishq Khandelwal, currently working as an Advanced Associate Software Engineer at Accenture with nearly 2 years of experience in building full-stack web applications. I’ve worked on designing and developing scalable, performant, and maintainable solutions using modern web technologies.
+                        I'm Tanishq Khandelwal, currently working as an Intermediate Software Engineer (SDE-2) at Q2 Software with over 3 years of experience in building full-stack web applications. I've worked on designing and developing scalable, performant, and maintainable solutions using modern web technologies.
                     </p>
                     <p style={{ marginBottom: '1.5rem' }}>
-                        My experience spans across frontend and backend development, where I enjoy building clean APIs, efficient data flows, and user-focused interfaces. I focus on writing reliable code and choosing the right tools to solve real-world problems effectively.
+                        My experience spans across frontend and backend development, where I enjoy building clean APIs, efficient data flows, multi-tier caching systems, and user-focused interfaces. I focus on writing reliable code and choosing the right tools to solve real-world problems effectively.
                     </p>
                     <p style={{ marginBottom: '1.5rem' }}>
                         I have a strong foundation in Data Structures and Algorithms and actively practice competitive programming to sharpen my problem-solving skills:
                     </p>
                     <p>
-                        LeetCode Knight (Max Rating: 2025 | Top 2.2%)
+                        LeetCode Knight (Max Rating: 2025 | Top 2.2% | 1270+ Solved)
                     </p>
-                    <p>4⭐ GeeksforGeeks (2900+ score)</p>
-                    <p style={{ marginBottom: '1.5rem' }}>3⭐ CodeChef | Pupil @ Codeforces</p>
+                    <p>GFG (Max Rating: 1879 | 1000+ Solved)</p>
+                    <p style={{ marginBottom: '1.5rem' }}>Ranked 1st among 3,000+ participants in an inter-university coding competition</p>
 
                     <p style={{ marginBottom: '1.5rem' }}>Always open to meaningful conversations and opportunities to build something impactful together.</p>
 
                     <a
-                        href="https://drive.google.com/file/d/1rl5TEFhh-EBKSUgzbzN5Vke-ZTa20_xl/view"
+                        href="https://drive.google.com/file/d/15MGtATXUEjWW7Kj4gz4-WYvNTbvKUo7E/view"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

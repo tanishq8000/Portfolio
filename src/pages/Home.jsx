@@ -11,11 +11,14 @@ const techStack = [
     'Full-Stack Web Development',
     'Frontend Engineering (React, Next.js)',
     'Backend APIs & Services (Node.js, ASP.NET Core)',
-    'RESTful API Design',
+    'RESTful API Design & CQRS',
     'Database Design & Optimization',
-    'Cloud & Application Monitoring (AWS, Azure)',
-    'Performance Optimization',
-    'Authentication & Security (JWT)',
+    'Cloud & Infrastructure (Azure, Redis, Docker)',
+    'System Design & Microservices',
+    'Event-Driven Architecture',
+    'Multi-Tier Caching & Performance',
+    'AI/ML Integration (LLM Agents, Generative AI)',
+    'CI/CD & DevOps',
 ];
 
 const projectStories = [
@@ -158,13 +161,13 @@ export default function Home() {
                             </div>
 
                             <h3 style={{ marginBottom: '0.5rem' }}>Tanishq Khandelwal</h3>
-                            <p className="meta-text" style={{ marginBottom: '1.5rem' }}>Software Engineer</p>
+                            <p className="meta-text" style={{ marginBottom: '1rem' }}>Intermediate Software Engineer (SDE-2)</p>
                             <p style={{ fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                                 Building scalable, high-performance web applications from frontend to backend.
                             </p>
 
                             <a
-                                href="https://drive.google.com/file/d/1rl5TEFhh-EBKSUgzbzN5Vke-ZTa20_xl/view"
+                                href="https://drive.google.com/file/d/15MGtATXUEjWW7Kj4gz4-WYvNTbvKUo7E/view"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{
@@ -225,7 +228,7 @@ export default function Home() {
                             {/* Quick Stats */}
                             <div className="stats-grid">
                                 <div className="stat-item">
-                                    <span className="stat-number">2+</span>
+                                    <span className="stat-number">3+</span>
                                     <span className="stat-label">Years Experience</span>
                                 </div>
                                 <div className="stat-item">
@@ -255,7 +258,7 @@ export default function Home() {
                                             <p className="meta-text" style={{ marginBottom: '0.5rem' }}>Knight Badge</p>
                                             <p style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.25rem' }}>2025 (Top 2.2%)</p>
                                             <p className="meta-text" style={{ marginBottom: '0.75rem' }}>Max Rating</p>
-                                            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>1150+ Problems Solved</p>
+                                            <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>1270+ Problems Solved</p>
                                         </BentoCard>
                                     </a>
 
@@ -270,8 +273,8 @@ export default function Home() {
                                             <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⭐</div>
                                             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: 'var(--color-lavender)' }}>GeeksforGeeks</h3>
                                             <p className="meta-text" style={{ marginBottom: '0.5rem' }}>4 Star Coder</p>
-                                            <p style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.25rem' }}>2980+</p>
-                                            <p className="meta-text" style={{ marginBottom: '0.75rem' }}>Coding Score</p>
+                                            <p style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.25rem' }}>1879</p>
+                                            <p className="meta-text" style={{ marginBottom: '0.75rem' }}>Max Rating</p>
                                             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-secondary)' }}>1000+ Problems Solved</p>
                                         </BentoCard>
                                     </a>

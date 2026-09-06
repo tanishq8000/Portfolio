@@ -23,10 +23,10 @@ const projects = [
         id: 2,
         title: 'Welth - An AI Powered Finance Tracker',
         description:
-            'Built a full-stack AI-driven finance tracking platform with multi-account support, budget management, and real-time data visualizations. Integrated Gemini AI for receipt scanning and personalized insights, and automated recurring transactions and reports using serverless workflows.',
+            'Built a full-stack AI finance platform (Next.js, Prisma, Clerk auth, Tailwind/Shadcn UI) supporting multi-account tracking, budgeting, and interactive dashboards over a relational data model. Implemented AI-powered receipt scanning with Gemini to auto-extract and categorize transaction data. Automated recurring transactions, budget alerts, and scheduled monthly reports via event-driven background jobs (Inngest).',
         image: welthImage,
         category: 'Full-Stack & AI',
-        tech: ['Next.js', 'Prisma', 'Gemini AI', 'Tailwind CSS', 'Inngest', 'MongoDB'],
+        tech: ['Next.js', 'Gemini AI', 'Prisma', 'Tailwind', 'Clerk', 'Inngest'],
         github: 'https://github.com/tanishq8000/Welth',
         live: 'https://welth-kohl.vercel.app/',
     },
