@@ -161,7 +161,7 @@ export default function Home() {
                             </div>
 
                             <h3 style={{ marginBottom: '0.5rem' }}>Tanishq Khandelwal</h3>
-                            <p className="meta-text" style={{ marginBottom: '1rem' }}>Intermediate Software Engineer (SDE-2)</p>
+                            <p className="meta-text" style={{ marginBottom: '1rem' }}>SDE-2 | Q2 Software | Fintech</p>
                             <p style={{ fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                                 Building scalable, high-performance web applications from frontend to backend.
                             </p>
