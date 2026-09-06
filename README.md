@@ -2,6 +2,11 @@
 
 A modern, interactive portfolio website featuring stunning 3D graphics, smooth animations, and an immersive user experience. Built with React, Three.js, and cutting-edge web technologies.
 
+<<<<<<< HEAD
+=======
+🔗 Check out Live : https://portfolio-phi-flax-76.vercel.app/
+
+>>>>>>> 91280ea484ea3e18081475f0439dd882cb1fdaa5
 ## ✨ Features
 
 - **3D Interactive Graphics** - Powered by Three.js and React Three Fiber
